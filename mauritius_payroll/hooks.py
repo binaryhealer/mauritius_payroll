@@ -262,3 +262,54 @@ app_license = "unlicense"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+regional_overrides = {
+    "Mauritius": {
+        "hrms.payroll.doctype.salary_slip.salary_slip.apply_regional_deductions":
+            "mauritius_payroll.payroll.salary_slip.apply_regional_deductions"
+    }
+}
+
+
+doc_events = {
+    "Salary Slip": {
+        "validate": (
+            "mauritius_payroll.payroll.salary_slip."
+            "update_mauritius_income_tax_breakup"
+        )
+    },
+    "Employee Tax Exemption Declaration": {
+        "validate": (
+            "mauritius_payroll.payroll.edf."
+            "validate_edf_declaration"
+        )
+    }
+}
+
+
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Additional Salary-custom_mauritius_eoy_generated",
+                    "Additional Salary-custom_mauritius_eoy_year",
+                    "Employee-custom_mauritius_prgf_exemption",
+                    "Employee Tax Exemption Declaration-custom_mauritius_edf_effective_from",
+                    "Salary Component-custom_mauritius_csg_treatment",
+                    "Salary Component-custom_mauritius_nsf_base",
+                    "Salary Component-custom_mauritius_hrdc_levy_base",
+                    "Salary Component-custom_mauritius_prgf_base",
+                    "Salary Component-custom_mauritius_eoy_bonus_qualifying_earning",
+                ],
+            ]
+        ],
+    }
+]
+
+
+
+after_sync = "mauritius_payroll.setup.ensure_statutory_salary_components"
+after_migrate = "mauritius_payroll.setup.ensure_statutory_salary_components"

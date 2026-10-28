@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "docstatus": 0,
+ "doctype": "Page",
+ "module": "Mauritius Payroll",
+ "name": "mauritius-eoy-processing",
+ "owner": "Administrator",
+ "page_name": "Mauritius EOY Processing",
+ "roles": [
+  {
+   "role": "HR Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Mauritius EOY Processing"
+}
