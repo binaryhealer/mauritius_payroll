@@ -313,3 +313,14 @@ fixtures = [
 
 after_sync = "mauritius_payroll.setup.ensure_statutory_salary_components"
 after_migrate = "mauritius_payroll.setup.ensure_statutory_salary_components"
+
+
+# Desktop / Apps Screen
+add_to_apps_screen = [
+    {
+        "name": "mauritius_payroll",
+        "title": "Mauritius Payroll",
+        "route": "/desk/mauritius-eoy-processing",
+        "sequence_id": 30,
+    }
+]
